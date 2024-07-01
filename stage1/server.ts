@@ -19,6 +19,10 @@ const getClientIp = (req: Request) => {
 //     }
 // )
 
+app.get("/", (req: Request, res: Response) => {
+    res.send("Hello World!")
+})
+
 
 app.get('/api/hello', (req: Request, res: Response, next: NextFunction) => {
     try {
