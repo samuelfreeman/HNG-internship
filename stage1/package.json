@@ -2,12 +2,12 @@
   "name": "HNG-internship",
   "version": "1.0.0",
   "description": "",
-  "main": "./dist/server.js",
+  "main": "./public/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "pnpm build && nodemon ./dist/server.js",
-    "start": "node ./dist/server.js",
-    "build": "tsc"
+    "start": "node ./public/server.js",
+      "build": "tsc --outDir./public"
   },
   "keywords": [],
   "author": "",
