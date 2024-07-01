@@ -1,6 +1,11 @@
 import express, { Request, Response, NextFunction } from "express";
 import requestIp from 'request-ip'
+import cors from 'cors'
+
 const app = express()
+
+app.use(cors())
+
 
 const getClientIp = (req: Request) => {
     console.log(requestIp.getClientIp(req))
@@ -14,10 +19,11 @@ const getClientIp = (req: Request) => {
 //     }
 // )
 
+
 app.get('/api/hello', (req: Request, res: Response, next: NextFunction) => {
     try {
 
-        console.log ( "hitting this endpoint from :",req.url)
+        console.log("hitting this endpoint from :", req.url)
         const visitorName = req.query.visitor_name || "Guest";
         const clientIp = getClientIp(req) || 'Unknown'
         const location = 'New York';

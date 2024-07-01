@@ -7,12 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "pnpm build && nodemon ./dist/server.js",
     "start": "node ./public/server.js",
-      "build": "tsc "
+    "build": "tsc "
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
     "@types/request-ip": "^0.0.41",
     "express": "^4.19.2",
