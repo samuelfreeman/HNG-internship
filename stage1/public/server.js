@@ -5,7 +5,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const request_ip_1 = __importDefault(require("request-ip"));
+const cors_1 = __importDefault(require("cors"));
 const app = (0, express_1.default)();
+app.use((0, cors_1.default)());
 const getClientIp = (req) => {
     console.log(request_ip_1.default.getClientIp(req));
     return request_ip_1.default.getClientIp(req);
@@ -16,6 +18,9 @@ const getClientIp = (req) => {
 //         next()
 //     }
 // )
+app.get("/", (req, res) => {
+    res.send("Hello World!");
+});
 app.get('/api/hello', (req, res, next) => {
     try {
         console.log("hitting this endpoint from :", req.url);
