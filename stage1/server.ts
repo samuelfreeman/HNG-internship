@@ -12,15 +12,16 @@ const getClientIp = (req: Request) => {
     return requestIp.getClientIp(req)
 
 }
-// app.use(
-//     (req: Request, res: Response, next: NextFunction) => {
-//         console.log(`Request  ${req.url} and request method ${req.method}`)
-//         next()
-//     }
-// )
+app.use(
+    (req: Request, res: Response, next: NextFunction) => {
+        console.log(`Request  ${req.url} and request method ${req.method}`)
+        next()
+    }
+)
 
-app.get("/", (req: Request, res: Response) => {
+app.get("/", (req: Request, res: Response, next: NextFunction) => {
     res.send("Hello World!")
+    next()
 })
 
 
