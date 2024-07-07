@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest ",
     "dev": "tsc   &&  nodemon ./dist/index",
-    "build": "npx prisma generate && npx primsa migrate dev"
+    "build": "npx prisma generate && npx prisma migrate dev"
   },
   "keywords": [],
   "author": "",
